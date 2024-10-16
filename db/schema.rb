@@ -41,7 +41,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_14_204520) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "role"
+    t.integer "role", default: 0
     t.string "phone"
     t.string "name"
     t.string "age"
