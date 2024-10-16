@@ -1,0 +1,29 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+
+development:
+  <<: *default
+  database: the_rial_news2
+  username: lopes
+  password: admin1234
+  host: localhost
+  port: 5432
+
+  
+test:
+  <<: *default
+  database: the_rial_news2_test
+  username: lopes
+  password: admin1234
+  host: localhost
+  port: 5432
+
+
+production:
+  <<: *default
+  database: the_rial_news2_production
+  username: the_rial_news2
+  password: <%= ENV["THE_RIAL_NEWS2_DATABASE_PASSWORD"] %>

@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @news %>
+
+<div>
+  <%= link_to "Edit this news", edit_news_path(@news) %> |
+  <%= link_to "Back to news", news_index_path %>
+
+  <%= button_to "Destroy this news", @news, method: :delete %>
+</div>
+<%= form_with(model: [@new, Comment.new]) do |form| %>
+
+  <div>
+    <%= form.label :content, "Nuevo comentario" %>
+    <%= form.text_area :content %>
+  </div>
+  <div>
+    <%= form.submit 'Comentar' %>
+  </div>
+<% end %>
