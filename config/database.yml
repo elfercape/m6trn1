@@ -7,8 +7,8 @@ default: &default
 development:
   <<: *default
   database: the_rial_news2
-  username: lopes
-  password: admin1234
+  username: <%= ENV["basedato_user"] %>
+  password: <%= ENV["basedato_password"] %>
   host: localhost
   port: 5432
 
