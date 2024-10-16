@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   resources :comments
   resources :news
     
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
   resources :news do
     resources :comments, only: [:create]
   end
